@@ -14,34 +14,40 @@ function declareWinner(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     switch (playerSelection) {
         case ("rock"):
-            console.log(computerSelection);
             if (computerSelection === "rock") {
-                return "Tie!";
+                return "Tie! Enemy chose rock";
             } else if (computerSelection === "scissors") {
-                return "Winner!";
+                return "Winner! Enemy chose scissors";
             } else {
-                return "Lose!";
+                return "Lose! Enemy chose paper";
             }
         case ("scissors"):
-            console.log(computerSelection);
             if (computerSelection === "scissors") {
-                return "Tie!";
+                return "Tie! Enemy chose scissors";
             } else if (computerSelection === "paper") {
-                return "Winner!";
+                return "Winner! Enemy chose paper";
             } else {
-                return "Lose!";
+                return "Lose! Enemy chose rock";
             }
         case ("paper"):
-            console.log(computerSelection);
             if (computerSelection === "paper") {
-                return "Tie!";
+                return "Tie! Enemy chose paper";
             } else if (computerSelection === "rock") {
-                return "Winner!";
+                return "Winner! Enemy chose rock";
             } else {
-                return "Lose!";
+                return "Lose! Enemy chose scissors";
             }
+        default:
+            console.log("Invalid input!");
+            break;
     }
 }
-
-console.log(declareWinner("roCk", computerPlay()));
+function startGame(){
+    let playerAnswer;
+    for(i=0;i<5;i++){
+        playerAnswer= prompt("Choose: Rock, Paper, or Scissors:");
+        console.log(declareWinner(playerAnswer, computerPlay()));
+    }
+}
+startGame();
 
