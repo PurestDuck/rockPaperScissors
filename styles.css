@@ -27,6 +27,9 @@ body{
 #comp{
     background-color: beige;
 }
+.score{
+    font-size:24px;
+}
 #announcement{
     text-align: center;
 }
