@@ -1,3 +1,17 @@
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
+
+rockBtn.addEventListener('click', ()=>{
+    console.log(declareWinner("rock",computerPlay()));
+});
+paperBtn.addEventListener('click', ()=>{
+    console.log(declareWinner("paper",computerPlay()));
+});
+scissorsBtn.addEventListener('click', ()=>{
+    console.log(declareWinner("scissors",computerPlay()));
+});
+
 function computerPlay() {
     let moveNumber = Math.floor(Math.random() * 3) + 1;
     let computerChoice;
@@ -42,12 +56,22 @@ function declareWinner(playerSelection, computerSelection) {
             break;
     }
 }
-function startGame(){
-    let playerAnswer;
-    for(i=0;i<5;i++){
-        playerAnswer= prompt("Choose: Rock, Paper, or Scissors:");
-        console.log(declareWinner(playerAnswer, computerPlay()));
-    }
-}
-startGame();
+
+// function submitRock(){
+//     console.log("rock");
+// }
+// function submitPaper(){
+//     console.log("paper");
+// }
+// function submitScissors(){
+//     console.log("scissors");
+// }
+// function startGame(){
+//     let playerAnswer;
+//     for(i=0;i<5;i++){
+//         playerAnswer= prompt("Choose: Rock, Paper, or Scissors:");
+//         console.log(declareWinner(playerAnswer, computerPlay()));
+//     }
+// }
+
 
