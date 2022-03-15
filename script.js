@@ -1,15 +1,16 @@
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
+const winnerText = document.querySelector('#announcement h1');
 
 rockBtn.addEventListener('click', ()=>{
-    console.log(declareWinner("rock",computerPlay()));
+    winnerText.innerText= declareWinner("rock",computerPlay());
 });
 paperBtn.addEventListener('click', ()=>{
-    console.log(declareWinner("paper",computerPlay()));
+    winnerText.innerText = declareWinner("paper",computerPlay());
 });
 scissorsBtn.addEventListener('click', ()=>{
-    console.log(declareWinner("scissors",computerPlay()));
+    winnerText.innerText = declareWinner("scissors",computerPlay());
 });
 
 function computerPlay() {

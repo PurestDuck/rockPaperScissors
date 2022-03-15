@@ -1,3 +1,32 @@
+#playArea, html, body {
+    height: 100%;
+    margin: 0;
+}
 body{
+    display:flex;
+    flex-direction: column;
+    margin:0px;
+    padding: 0px;
     background-color: rgb(175, 241, 241)
-};
+}
+#playArea{
+    display: flex;
+    flex-direction: row;
+    
+}
+.input{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#player{
+    background-color: wheat;
+}
+#comp{
+    background-color: beige;
+}
+#announcement{
+    text-align: center;
+}
