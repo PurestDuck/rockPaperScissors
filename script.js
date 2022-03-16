@@ -4,6 +4,7 @@ const scissorsBtn = document.querySelector('#scissors');
 const winnerText = document.querySelector('#announcement h1');
 const playerScoreText = document.querySelector('#player .score');
 const compScoreText = document.querySelector('#comp .score');
+const playerImg = document.querySelector('#player img');
 let playerScore = 0;
 let compScore = 0;
 
@@ -39,6 +40,7 @@ function declareRoundWinner(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     switch (playerSelection) {
         case ("rock"):
+            changeHandPic("rock");
             if (computerSelection === "rock") {
                 return "Tie! Enemy chose rock";
             } else if (computerSelection === "scissors") {
@@ -49,6 +51,7 @@ function declareRoundWinner(playerSelection, computerSelection) {
                 return "Lose! Enemy chose paper";
             }
         case ("scissors"):
+            changeHandPic("scissors");
             if (computerSelection === "scissors") {
                 return "Tie! Enemy chose scissors";
             } else if (computerSelection === "paper") {
@@ -59,6 +62,7 @@ function declareRoundWinner(playerSelection, computerSelection) {
                 return "Lose! Enemy chose rock";
             }
         case ("paper"):
+            changeHandPic("paper");
             if (computerSelection === "paper") {
                 return "Tie! Enemy chose paper";
             } else if (computerSelection === "rock") {
@@ -84,22 +88,16 @@ function setScore(){
     playerScoreText.innerText = `Score: ${playerScore}`;
     compScoreText.innerText = `Score: ${compScore}`;
 }
-
-// function submitRock(){
-//     console.log("rock");
-// }
-// function submitPaper(){
-//     console.log("paper");
-// }
-// function submitScissors(){
-//     console.log("scissors");
-// }
-// function startGame(){
-//     let playerAnswer;
-//     for(i=0;i<5;i++){
-//         playerAnswer= prompt("Choose: Rock, Paper, or Scissors:");
-//         console.log(declareWinner(playerAnswer, computerPlay()));
-//     }
-// }
-
-
+function changeHandPic(move){
+    switch(move){
+        case("rock"):
+            playerImg.src="images/rock.png";
+            break;
+        case("paper"):
+            playerImg.src="images/paper.png";
+            break;
+        case('scissors'):
+            playerImg.src="images/scissors.png";
+            break;
+    }
+}
